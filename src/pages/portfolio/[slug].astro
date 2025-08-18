@@ -1,0 +1,32 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+    project: CollectionEntry<'portfolio'>;
+}
+
+export async function getStaticPaths() {
+    const allProjects = await getCollection('portfolio');
+    return allProjects.map((project:CollectionEntry<'portfolio'>) => ({
+        params: { slug: project.slug },
+        props: { project },
+    }));
+}
+
+const { project } = Astro.props;
+---
+
+<BaseLayout title={project.data.title}>
+    <h1>{project.data.title}</h1>
+    <Image
+        src={project.data.fullImg}
+        alt={`Full image of ${project.data.title}`}
+        width={1200}
+        height={800}
+        format="avif"
+        />
+        <p>{project.data.description}</p>
+        <a href="/portfolio">Back to all projects</a>
+</BaseLayout>

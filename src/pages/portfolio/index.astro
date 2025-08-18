@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+
+const allProjects = await getCollection('portfolio');
+---
+<BaseLayout>
+    <h1>My Portfolio</h1>
+    <div class="project-grid">
+        {allProjects.map((project:CollectionEntry<'portfolio'>) => (
+        <a href={`/portfolio/${project.slug}`}>
+            <Image
+                src={project.data.thumbImg}
+                alt={project.data.title}
+                width={500}
+                height={300}
+                format="avif"
+                />
+                <h2>{project.data.title}</h2>
+        </a>
+                ))}
+    </div>
+</BaseLayout>
