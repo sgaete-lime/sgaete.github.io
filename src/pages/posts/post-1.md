@@ -5,15 +5,11 @@ pubDate: 2022-07-01
 description: 'This is the first post of my new Astro blog.'
 author: 'Astro Learner'
 image:
-    url: 'https://docs.astro.build/assets/rose.webp'
-    alt: 'The Astro logo on a dark background with a pink glow.'
+    url: 'https://images-ext-1.discordapp.net/external/du83rpG3c8UbWqqoUO4241UfWDfHXjkcUcQOAvmASoI/https/gif.fxtwitter.com/tweet_video/GxZCAO1WIAAamOX.gif?width=1640&height=1623'
+    alt: 'gigi murin jackin her little grem'
 tags: ["astro", "blogging", "learning in public"]
 ---
-# My First Blog Post
-
-Published on: 2022-07-01
-
-Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
+### Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 
 ## What I've accomplished
 
