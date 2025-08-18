@@ -66,17 +66,22 @@
     }
     .lb-content {
         display: flex;
-        max-width: 90%;
-        max-height: 90%;
-        gap: 2rem;
+        align-items: center;
+        max-width: 60vw;
+        max-height: 60vh;
+        gap: 3rem;
     }
     .lb-sidebar {
         color: white;
+        background-color: rgba(0, 0, 0, 0.5);
         width: 300px;
+        flex-shrink: 0;
+        border-radius: 6px;
+        padding: 1.5rem;
     }
     img {
-        max-width: 100%;
-        height: auto;
+        max-width: 80vw;
+        max-height: 80vh;
         object-fit: contain;
     }
 </style>

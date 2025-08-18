@@ -35,7 +35,8 @@ const allProjects = await getCollection('portfolio');
   .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
+    column-gap: 6rem;
+    row-gap: 2rem;
   }
   .project-card {
     cursor: pointer;
@@ -44,10 +45,18 @@ const allProjects = await getCollection('portfolio');
     display: block;
   }
   .project-card img {
+    object-fit: cover;
+    transition: filter 0.2s ease-in-out;
+    border: 2px solid #1e1e1e;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  .project-card:hover img {
+    filter: brightness(1.0) contrast(1.2);
   }
   .project-card h2 {
+    text-align: center;
     margin-top: 0.5rem;
     font-size: 1.25rem;
   }
