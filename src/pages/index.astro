@@ -8,7 +8,7 @@ const pageTitle = "santiago gaete";
 </BaseLayout>
 
 <body class="hey">
-	<h1 class="sorry">this site is currently under construction. sorry!</h1>
+	<h1 class="sorry">this site is currently <span id="green">under construction.</span> sorry!</h1>
 	<h2 class="but-wait">feel free to check out my <a href="/portfolio">portfolio,</a> though!</h2>
 </body>
 
@@ -21,14 +21,24 @@ const pageTitle = "santiago gaete";
 	.sorry {
 		padding-top:7.5rem;
 		text-align:center;
-		text-decoration: underline;
-		text-underline-offset: 0.4rem;
-		text-decoration-color:#70b73e;
 	}
 	a {
 		text-underline-offset: 0.15rem;
+		text-decoration: underline;
+		text-decoration-color:#70b73e;
+		color: #22221f;
+	}
+	a:hover {
+		color: #70b73e;
 	}
 	.but-wait {
 		text-align:center;
+	}
+	#green {
+		background-color: #70b73e;
+		color: #ecefeb;
+		display: inline-block;
+		padding: 0rem 1rem;
+		border-radius: 8px;
 	}
 </style>

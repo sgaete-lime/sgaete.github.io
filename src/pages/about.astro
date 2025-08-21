@@ -23,22 +23,15 @@ const textCase = "uppercase";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <style define:vars={{skillColor, fontWeight, textCase}}>
-            h1 {
-                color: purple;
-                font-size: 4rem;
-            }
-            .skill {
-                color: var(--skillColor);
-                font-weight: var(--fontWeight);
-                text-transform: var(--textCase);
-            }
-        </style>
-	<h2>... and my new Astro site!</h2>
+	<h1 id="title">about</h1>
+        <h2 class="lighter">Hi, I'm Santi.</h2>
+        <h3 class="lighter">My full name's Santiago Gaete, but Santi is fine. My goal is to make things that inspire other people to make even cooler things.</h3>
+        <h3 class="lighter">I just started at the University of Southern California as a major in Computer Science Games, graduating in 2029.</h3>
+        <h3 class="lighter">Here's my contact info!</h3>
+        
 
-            <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
-
-            <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
+    <h1 id="title">games</h1>
+            
             <p>A few things about me:</p> 
             <ul>
                 <li>My name is {identity.fName}.</li>
@@ -58,3 +51,21 @@ const textCase = "uppercase";
 
             {goal === 2 ? <p>My goal is to finish in {goal} days.</p> : <p>My goal is not {goal} days.</p>}
 </BaseLayout>
+
+<style>
+    #title {
+        font-weight:bold;   
+    }
+    .lighter {
+        font-weight:lighter;
+    }
+    h1 {
+        font-size-adjust:calc(0.75)
+    }
+    h2 {
+        font-size-adjust:calc(0.6)
+    }
+    h3 {
+        font-size-adjust:calc(0.6)
+    }
+</style>
