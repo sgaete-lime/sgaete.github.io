@@ -46,7 +46,7 @@ const categorizedProjects = allProjects.reduce((acc, project) => {
                 height={250}
                 format="avif"
               />
-              <h3>{project.data.title}</h3>
+              {category === 'games' && <h3>{project.data.title}</h3>}
             </div>
           </ImageLightbox>
         ))}
@@ -83,5 +83,9 @@ const categorizedProjects = allProjects.reduce((acc, project) => {
     text-align: center;
     margin-top: 0.5rem;
     font-size: 1.25rem;
+  }
+
+  .category-illustration .project-grid {
+    row-gap:0rem;
   }
 </style>

@@ -4,6 +4,7 @@
     export let media = []; // array of { type: 'image' | 'video', src: string }
     export let title;
     export let desc;
+    
 
     let isModalOpen = false;
     let currentIndex = 0;
