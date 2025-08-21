@@ -1,9 +1,29 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Greeting from '../components/Greeting';
-const pageTitle = "Home";
+const pageTitle = "Santiago Gaete";
 ---
 <BaseLayout pageTitle={pageTitle}>
-	<h2>My awesome blog subtitle</h2>
-	<Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
+			<h1>{pageTitle}</h1>
 </BaseLayout>
+
+<body class="sorry">
+	<h1 class="sorry">this site is currently under construction. sorry!</h1>
+	<h2 class="but-wait">feel free to check out my <a href="/portfolio">portfolio,</a> though!</h2>
+</body>
+
+<style>
+	.sorry {
+		padding-top:6rem;
+		text-align:center;
+		text-decoration: underline;
+		text-underline-offset: 0.4rem;
+		text-decoration-color:#70b73e;
+	}
+	a {
+		text-underline-offset: 0.15rem;
+	}
+	.but-wait {
+		text-align:center;
+	}
+</style>
