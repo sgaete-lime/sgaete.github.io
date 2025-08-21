@@ -5,37 +5,61 @@ import { Image } from 'astro:assets';
 import ImageLightbox from '../../components/ImageLightbox.svelte'
 
 const allProjects = await getCollection('portfolio');
+
+// Create a map of categories to an array of projects
+const categorizedProjects = allProjects.reduce((acc, project) => {
+  const category = project.data.category;
+  if (!acc[category]) acc[category] = [];
+  acc[category].push(project);
+  return acc;
+}, {} as Record<string, CollectionEntry<'portfolio'>[]>);
 ---
-<BaseLayout title="My Portfolio">
-    <h1>My Portfolio</h1>
-    <div class="project-grid">
-        {allProjects.map((project:CollectionEntry<'portfolio'>) => (
-            <ImageLightbox
-                client:visible 
-                imageSrc={project.data.fullImg}
-                title={project.data.title}
-                desc={project.data.desc}
-                >
-        <div class="project-card">
-            <Image
+
+<BaseLayout title="portfolio">
+  <h1 id="title">portfolio</h1>
+  <br />
+
+  {Object.entries(categorizedProjects).map(([category, projects]) => (
+    <section class={`category-section category-${category.toLowerCase().replace(/\s+/g, '-')}`}>
+      <h2 class="category-title">{category}</h2>
+      <div class="project-grid">
+        {projects.map((project) => (
+          <ImageLightbox
+            client:visible
+            media={[
+              { type: 'image', src: project.data.fullImg },
+
+              // If your frontmatter supports more images:
+              ...(project.data.extraImgs || []).map(img => ({ type: 'image', src: img })),
+
+              // If your frontmatter supports a YouTube video:
+              ...(project.data.youtube || []).map(link => ({ type: 'video', src: link }))
+            ]}
+            title={project.data.title}
+            desc={project.data.desc}
+          >
+            <div class="project-card">
+              <Image
                 src={project.data.thumbImg}
                 alt={project.data.title}
-                width={500}
-                height={300}
+                width={250}
+                height={250}
                 format="avif"
-                />
-                <h2>{project.data.title}</h2>
-                </div>
-        </ImageLightbox>
-                ))}
-    </div>
+              />
+              <h3>{project.data.title}</h3>
+            </div>
+          </ImageLightbox>
+        ))}
+      </div>
+    </section>
+  ))}
 </BaseLayout>
 
 <style>
   .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    column-gap: 6rem;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    column-gap: 0.5rem;
     row-gap: 2rem;
   }
   .project-card {

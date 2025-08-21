@@ -13,6 +13,11 @@ body {
     box-sizing: content-box;
 }
 
+#title {
+        font-weight:bold; 
+        font-size-adjust:calc(0.75)  
+    }
+
 a {
     color: #609f32; 
 }
