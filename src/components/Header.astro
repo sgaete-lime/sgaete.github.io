@@ -3,9 +3,21 @@ import Navigation from './Navigation.astro'
 import Hamburger from './Hamburger.astro'
 ---
 
-<header>
-    <nav>
-        <Hamburger />
-        <Navigation />
-    </nav>
+<header class="headerCon">
+  <nav>
+    <Hamburger />
+    <Navigation />
+  </nav>
 </header>
+
+<style>
+  .headerCon {
+    width: 100%;
+    height: 75px;
+    background-color: #22221f;
+    /* Use flexbox on the header to center the nav vertically */
+    display: inline-flex;
+    align-items: center;
+    vertical-align: top;
+  }
+</style>

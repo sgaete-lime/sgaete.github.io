@@ -12,6 +12,7 @@
     "@astrojs/preact": "^4.1.0",
     "@astrojs/rss": "^4.0.12",
     "@astrojs/svelte": "^7.1.0",
+    "@fontsource/fira-sans": "^5.2.6",
     "astro": "^5.11.0",
     "preact": "^10.27.0",
     "svelte": "^5.38.2",
