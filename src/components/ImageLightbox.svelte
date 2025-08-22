@@ -120,6 +120,8 @@
         max-width: 60vw;
         max-height: 70vh;
         object-fit: contain;
+        border: white;
+        border-style:solid;
         border-radius: 6px;
     }
     .nav {
