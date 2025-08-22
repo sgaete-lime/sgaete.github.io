@@ -21,7 +21,7 @@ const categorizedProjects = allProjects.reduce((acc, project) => {
 
   {Object.entries(categorizedProjects).map(([category, projects]) => (
     <section class={`category-section category-${category.toLowerCase().replace(/\s+/g, '-')}`}>
-      <h2 class="category-title">{category}</h2>
+      <h1 class="category-title">{category}</h1>
       <div class="project-grid">
         {projects.map((project) => (
           <ImageLightbox
@@ -71,15 +71,19 @@ const categorizedProjects = allProjects.reduce((acc, project) => {
   .project-card img {
     object-fit: cover;
     transition: filter 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
     border: 2px solid #1e1e1e;
     border-radius: 8px;
     padding: 5px;
+    background-color:none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   }
   .project-card:hover img {
-    filter: brightness(1.0) contrast(1.2);
+    transition: background-color 0.2s ease-in-out;
+    background-color:#75da5b;
+    filter: brightness(1.0) contrast(1.0);
   }
-  .project-card h2 {
+  .project-card h3 {
     text-align: center;
     margin-top: 0.5rem;
     font-size: 1.25rem;
