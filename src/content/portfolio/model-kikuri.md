@@ -1,5 +1,5 @@
 ---
-title: Kikuri Hiroi 3D Model
+title: 3D Model
 desc: Modeled in Blender, with edits in Aseprite.
 category: modeling
 thumbImg: https://media.discordapp.net/attachments/975521163843354664/1408277897545781308/image.png?ex=68a9287f&is=68a7d6ff&hm=f421ddaed7d8c342a9ef499a393843730eeaca6dd31427103f07d8ef6bc66775&=&format=webp&quality=lossless&width=1733&height=1765

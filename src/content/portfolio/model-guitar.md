@@ -1,5 +1,5 @@
 ---
-title: Bocchi's Guitar 3D Model
+title: Guitar 3D Model
 desc: Modeled and animated in Blender.
 category: modeling
 thumbImg: https://pbs.twimg.com/media/FoEZIAEaIAAf2xb?format=png&name=small

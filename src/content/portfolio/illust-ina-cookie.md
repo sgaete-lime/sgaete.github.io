@@ -1,5 +1,5 @@
 ---
-title: Ina Cookie Thief Pixel Art
+title: Cookie Pixel Art
 desc: Drawn in Aseprite.
 category: illustration
 thumbImg: https://pbs.twimg.com/media/GR-ZbClaEAAyPkd?format=png&name=small
