@@ -1,6 +1,6 @@
 ---
 title: Tamadoki
-desc: Detailed description for first project!
+desc: A life simulation pet training game built in 2 weeks for a game jam, made with a team of 4 people. I was in charge of game design, UI/UX, art direction, and writing.
 category: games
 thumbImg: https://i.imgur.com/qRTBUpM.png
 fullImg: https://img.itch.zone/aW1nLzIyNzQxNTA1LnBuZw==/original/uoPOR8.png

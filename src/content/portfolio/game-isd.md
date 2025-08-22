@@ -1,6 +1,6 @@
 ---
 title: Idol Showdown
-desc: Detailed description for first project!
+desc: A free-to-play fighting game developed by Besto Games, with over 1.2 million downloads and very positive reception. I worked on art sprites and marketing, handling countless character animations and two game trailers by myself!
 category: games
 thumbImg: https://i0.wp.com/finalweapon.net/wp-content/uploads/2023/05/Idol-Showdown.jpg?fit=1280%2C720&ssl=1
 fullImg: https://i.gzn.jp/img/2023/05/08/idol-showdown/00.png
