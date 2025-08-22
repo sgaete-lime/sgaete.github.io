@@ -26,30 +26,8 @@ const textCase = "uppercase";
 	<h1 id="title">about</h1>
         <h2 class="lighter">Hi, I'm Santi.</h2>
         <h3 class="lighter">My full name's Santiago Gaete, but Santi is fine. My goal is to make things that inspire other people to make even cooler things.</h3>
-        <h3 class="lighter">I just started at the University of Southern California as a major in Computer Science Games, graduating in 2029.</h3>
-        <h3 class="lighter">Here's my contact info!</h3>
-        
-
-    <h1 id="title">games</h1>
-            
-            <p>A few things about me:</p> 
-            <ul>
-                <li>My name is {identity.fName}.</li>
-                <li>I live in {identity.city} and I'm majoring in {identity.major} at the {identity.school}.</li>
-                {identity.hobbies.length >= 2 &&
-                    <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-                }
-            </ul>
-            <p>My skills are:</p>
-            <ul>
-                {skills.map((skill) => <li class="skill">{skill}</li>)}
-            </ul>
-
-            {happy && <p>I am happy to be learning Astro!</p>}
-
-            {finished && <p>I finished this tutorial!</p>}
-
-            {goal === 2 ? <p>My goal is to finish in {goal} days.</p> : <p>My goal is not {goal} days.</p>}
+        <h3 class="lighter">I just started at the University of Southern California as a major in <br>Computer Science Games, graduating in 2029.</h3>
+        <h3 class="lighter">You can contact me at sgaetepe@hotmail.com or gaete@usc.edu :)</h3> 
 </BaseLayout>
 
 <style>

@@ -6,6 +6,14 @@ import ImageLightbox from '../../components/ImageLightbox.svelte'
 
 const allProjects = await getCollection('portfolio');
 
+// Define the order of categories
+const categoryOrder = ["games", "modeling", "illustration", "other"];
+
+// Sort projects inside categories using "order" field
+function sortProjects(a: CollectionEntry<'portfolio'>, b: CollectionEntry<'portfolio'>) {
+  return (a.data.order ?? 9999) - (b.data.order ?? 9999);
+}
+
 // Create a map of categories to an array of projects
 const categorizedProjects = allProjects.reduce((acc, project) => {
   const category = project.data.category;
@@ -13,26 +21,28 @@ const categorizedProjects = allProjects.reduce((acc, project) => {
   acc[category].push(project);
   return acc;
 }, {} as Record<string, CollectionEntry<'portfolio'>[]>);
+
+// Sort projects inside each category
+for (const category in categorizedProjects) {
+  categorizedProjects[category].sort(sortProjects);
+}
 ---
 
 <BaseLayout title="portfolio">
   <h1 id="title">portfolio</h1>
-  <br />
+  <h3>If you're wondering if I can do something specific outside of these examples, please ask! I just might know how, and if not, I'm always happy to try something new.</h3>
 
-  {Object.entries(categorizedProjects).map(([category, projects]) => (
+{categoryOrder.map((category) =>
+  categorizedProjects[category] && (
     <section class={`category-section category-${category.toLowerCase().replace(/\s+/g, '-')}`}>
       <h1 class="category-title">{category}</h1>
       <div class="project-grid">
-        {projects.map((project) => (
+        {categorizedProjects[category].map((project) => (
           <ImageLightbox
             client:visible
             media={[
               { type: 'image', src: project.data.fullImg },
-
-              // If your frontmatter supports more images:
               ...(project.data.extraImgs || []).map(img => ({ type: 'image', src: img })),
-
-              // If your frontmatter supports a YouTube video:
               ...(project.data.youtube || []).map(link => ({ type: 'video', src: link }))
             ]}
             title={project.data.title}
@@ -52,7 +62,8 @@ const categorizedProjects = allProjects.reduce((acc, project) => {
         ))}
       </div>
     </section>
-  ))}
+  )
+)}
 </BaseLayout>
 
 <style>
@@ -90,6 +101,9 @@ const categorizedProjects = allProjects.reduce((acc, project) => {
   }
 
   .category-illustration .project-grid {
+    row-gap:0rem;
+  }
+  .category-modeling .project-grid {
     row-gap:0rem;
   }
 </style>
