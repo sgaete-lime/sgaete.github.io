@@ -2,8 +2,8 @@
 title: Pixel Art
 desc: Drawn in Aseprite.
 category: illustration
-thumbImg: https://pbs.twimg.com/media/GLHCS5naIAAN3cQ?format=png&name=small
-fullImg: https://pbs.twimg.com/media/GLHCS5naIAAN3cQ?format=png&name=large
+thumbImg: "./images/illust/biboo.png"
+fullImg: "./images/illust/biboo.png"
 order: 4
 ---
 Markdown body

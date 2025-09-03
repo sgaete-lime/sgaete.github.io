@@ -30,7 +30,7 @@ for (const category in categorizedProjects) {
 
 <BaseLayout title="portfolio">
   <h1 id="title">art portfolio</h1>
-  <h3>If you're wondering if I can do something specific outside of these examples, please ask! <br>I just might know how, and if not, I'm always happy to try something new.</h3>
+  <h3><br></h3>
 
 {categoryOrder.map((category) =>
   categorizedProjects[category] && (
@@ -41,8 +41,11 @@ for (const category in categorizedProjects) {
           <ImageLightbox
             client:visible
             media={[
-              { type: 'image', src: project.data.fullImg },
-              ...(project.data.extraImgs || []).map(img => ({ type: 'image', src: img })),
+              { type: 'image', src: project.data.fullImg.src },
+              ...(project.data.extraImgs || []).map(img => ({
+                type: 'image',
+                src: typeof img === 'string' ? img : img.src, // handle extraImgs being image() objects
+              })),
               ...(project.data.youtube || []).map(link => ({ type: 'video', src: link }))
             ]}
             title={project.data.title}
@@ -52,9 +55,10 @@ for (const category in categorizedProjects) {
               <Image
                 src={project.data.thumbImg}
                 alt={project.data.title}
-                width={250}
-                height={250}
+                width={1000}
+                height={1000}
                 format="avif"
+                class="thumb"
               />
               {category === 'games' && <h3>{project.data.title}</h3>}
             </div>
@@ -67,6 +71,10 @@ for (const category in categorizedProjects) {
 </BaseLayout>
 
 <style>
+  .thumb {
+    max-width: 250px;   /* constrain displayed size */
+  max-height: 250px;
+  }
   .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));

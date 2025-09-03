@@ -2,8 +2,8 @@
 title: Drawing
 desc: Drawn in Procreate.
 category: illustration
-thumbImg: https://pbs.twimg.com/media/GtmS9H5bwAAhkoZ?format=jpg&name=small
-fullImg: https://pbs.twimg.com/media/GtmS9H5bwAAhkoZ?format=jpg&name=large
+thumbImg: "./images/illust/gg-messy.png"
+fullImg: "./images/illust/gg-messy.png"
 order: 6
 ---
 Markdown body

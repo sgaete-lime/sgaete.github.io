@@ -55,8 +55,8 @@
                 <img src={media[currentIndex].src} alt={title} />
             {:else if media[currentIndex].type === 'video'}
                 <iframe
-                    width="560"
-                    height="315"
+                    width="960"
+                    height="512"
                     src={media[currentIndex].src}
                     title={title}
                     frameborder="0"
