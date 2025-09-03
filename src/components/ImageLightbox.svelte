@@ -1,10 +1,9 @@
 <script>
     import { fade } from 'svelte/transition';
 
-    export let media = []; // array of { type: 'image' | 'video', src: string }
+    export let media = []; 
     export let title;
     export let desc;
-    
 
     let isModalOpen = false;
     let currentIndex = 0;
@@ -12,18 +11,22 @@
     function openModal(index = 0) {
         currentIndex = index;
         isModalOpen = true;
+        preloadAdjacent(index);
     }
     function closeModal() {
         isModalOpen = false;
     }
     function next() {
         currentIndex = (currentIndex + 1) % media.length;
+        preloadAdjacent(currentIndex);
     }
     function prev() {
         currentIndex = (currentIndex - 1 + media.length) % media.length;
+        preloadAdjacent(currentIndex);
     }
     function goToSlide(index) {
         currentIndex = index;
+        preloadAdjacent(index);
     }
 
     function handleKeydown(event) {
@@ -31,6 +34,30 @@
         if (event.key === 'Escape') closeModal();
         if (event.key === 'ArrowRight') next();
         if (event.key === 'ArrowLeft') prev();
+    }
+
+    // ✅ Preload the next/prev images (but not videos/iframes)
+    function preloadAdjacent(index) {
+        const nextIndex = (index + 1) % media.length;
+        const prevIndex = (index - 1 + media.length) % media.length;
+
+        [nextIndex, prevIndex].forEach(i => {
+            const item = media[i];
+            if (item && item.type === "image") {
+                const img = new Image();
+                img.src = item.src;
+            }
+        });
+    }
+
+    // Optional: preload everything on hover/focus of the project card
+    function preloadAll() {
+        for (const item of media) {
+            if (item.type === "image") {
+                const img = new Image();
+                img.src = item.src;
+            }
+        }
     }
 </script>
 
@@ -40,6 +67,8 @@
 <div 
     on:click={() => openModal(0)}
     on:keydown={(e) => e.key === 'Enter' && openModal(0)}
+    on:mouseenter={preloadAll}
+    on:focus={preloadAll}
     tabindex="0"
     role="button"
 >
