@@ -7,6 +7,6 @@ import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://sgaete.netlify.app",
+  site: "https://sgaete-lime.github.io",
   integrations: [preact(), svelte()]
 });
