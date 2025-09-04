@@ -1,5 +1,5 @@
 html {
-    background-color: #f6faf5;
+    background-color: #f8faf7;
     font-family: "Fira Sans";
 }
 
@@ -47,6 +47,19 @@ h1 {
     padding: 1.5rem 1em;
     color: #22221f;
 }
+
+.linker {
+		text-underline-offset: 0.15rem;
+		text-decoration: underline;
+		text-decoration-color:#70b73e;
+		color: #22221f;
+        font-weight:bold;
+		transition: color 0.15s ease-in-out;
+	}
+	.linker:hover {
+		color: #70b73e;
+		transition: color 0.15s ease-in-out;
+	}
 
 .nav-links a {
     display: block;

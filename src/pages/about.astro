@@ -1,34 +1,51 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 
-const pageTitle = "About Me";
+const pageTitle = "about santi";
 
-const identity = {
-    fName: "Santiago",
-    city: "Carlsbad, CA",
-    major: "CS Games",
-    school: "University of Southern California",
-    hobbies: ["photography", "manufacturing", "graphic design"],
-};
-
-const skills = ["C++", "C#", "Adobe Photoshop & Illustrator", "Adobe Premiere Pro & After Effects", "Blender", "Procreate"];
-
-const happy = true;
-const finished = true;
-const goal = 2;
-
-const skillColor = "navy";
-const fontWeight = "bold";
-const textCase = "uppercase";
+const csgaLink = "https://www.cs.usc.edu/academic-programs/undergrad/computer-science-games/"
+const persMail = "mailto:sgaetepe@hotmail.com"
+const uscMail = "mailto:gaete@usc.edu"
+const bestoLink = "https://www.linkedin.com/company/besto-games/"
+const itchLink = "https://cloudlime.itch.io/"
+const uscGM = "https://games.usc.edu/ourprogram"
+const holopho = "https://photos.google.com/share/AF1QipNMRhkxXpsi3_6gAjEVw0NBlTlFzgFzxjL2G3uAEvlhx1DllFi2peFHxHxinXJbiQ?pli=1&key=VFRVRWFMWTY2cnZ4UWdUOHVXT0x2Y1F3d3JIdnBR"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
 	<h1 id="title">about</h1>
         <h2 class="lighter">Hi, I'm Santi.</h2>
-        <h3 class="lighter">My full name's Santiago Gaete, but Santi is fine. My goal is to make things that inspire other people to make even cooler things.</h3>
-        <h3 class="lighter">I just started at the University of Southern California as a major in <br>Computer Science Games, graduating in 2029.</h3>
-        <h3 class="lighter">You can contact me at sgaetepe@hotmail.com or gaete@usc.edu :)</h3>
-        <body>Skills:</body>
+        <h3 class="lighter">My full name's Santiago Gaete, but Santi is fine. My goal is to make cool things that inspire other people to make even cooler things.</h3>
+        <h3 class="lighter">I'm a student at the University of Southern California as a major in <br><a class="linker" href={csgaLink} target="_blank">Computer Science Games,</a> graduating in 2029.</h3>
+        <h3 class="lighter">You can contact me at <a class="linker" href={persMail} target="_blank">sgaetepe@hotmail.com</a> or 
+            <a class="linker" href={uscMail} target="_blank">gaete@usc.edu</a> :)</h3>
+        
+        <h1>games</h1>  
+        <h2 class="lighter">I like making 'em, that's for sure.</h2>
+        <h3 class="lighter">The Video Game™, to me, is the art form that brings together the greatest amount of different creative fields—and 
+            thus, the greatest amount of amazingly talented people that I want to learn from. </h3>
+            <h3 class="lighter">I'm a <a class="linker" href={itchLink} target="_blank">solo developer,</a> 
+            a member of <a class="linker" href={bestoLink} target="_blank">Besto Games,</a> 
+            and a student at <a class="linker" href={uscGM} target="_blank">USC Games.</a></h3>
+            <h3 class="lighter" id="ex">I'm capable as a generalist, and I'm working towards using my skills for tech art.</h3>
+        <h1>art</h1>
+        <h2 class="lighter">The fun part.</h2>
+        <h3 class="lighter">Illustration and 3D modeling are a favorite of mine. Check out my <a href="/portfolio" class="linker">art portfolio.</a></h3>
+        <h3 class="lighter">I also do photography often. Here's a <a class="linker" href={holopho} target="_blank">recent album!</a></h3>
+
+        <h1>other</h1>
+        <h2 class="lighter">Email me tagline ideas...</h2>
+        <h3 class="lighter">I like running. I ran cross country and track in high school, and I'm now a member of USC's triathlon club. <span style="transform: skewX(-7deg);">It's fun to do hard things!</span></h3>
+        <h3 class="lighter">Strategy games are some of my favorites. Most recently, I've been competing in Pokemon VGC, and I've played
+            at the regional level (and Worlds, technically.)
+        </h3>
+        <h3 class="lighter">Manufacturing and fabrication is a big hobby of mine, and I'm currently a
+            Student Worker at USC's Baum Family Maker Space. I handle 3D printing & laser cutting, because
+            I'm most interested in how these machines can be used to produce art!
+        </h3>
+        
+        <h1>skills</h1>
+        <h3 class="lighter">
         <ul>
             <li>C++, C#, Python, Java, HTML/CSS/JS</li>
             <li>Unity 2D/3D, Godot</li>
@@ -37,13 +54,19 @@ const textCase = "uppercase";
             <li>Adobe Photoshop, Adobe Illustrator, Adobe Lightroom</li>
             <li>Adobe Premiere Pro, Adobe After Effects</li>
             </ul> 
+        </h3>
 </BaseLayout>
+
 
 <style>
     .lighter {
         font-weight:lighter;
     }
+    #ex {
+        transform: skewX(-7deg);
+    }
     h2 {
+        transform: skewX(-7deg);
         font-size-adjust:calc(0.6)
     }
     h3 {
